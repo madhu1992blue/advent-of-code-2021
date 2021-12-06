@@ -10,8 +10,7 @@ def to_decimal(binary: str)->int:
     return decimal
 
 def gen_rating(diagnostics: List[str], invert_significant: bool):
-    """Generate rating for diagnostics, val when no. 0s lte no. of 1s and
-    val when no. of 0s > no. of 1s"""
+    """Generate rating for given diagnostics and invert_significant"""
     def next_diagnostics(diagnostics: List[str], bit_pos: int):
         zeros = sum([1 for diag in diagnostics if diag[bit_pos] == "0"])
         ones = len(diagnostics) - zeros
